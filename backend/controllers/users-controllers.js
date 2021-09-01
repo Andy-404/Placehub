@@ -18,7 +18,7 @@ const getUsers = async (req, res, next) => {
     );
     return next(error);
   }
-  res.send({ users: users.map(user => user.toObject({ getters: true })) });
+  res.json({ users: users.map(user => user.toObject({ getters: true })) });
 };
 
 // To create a new user
