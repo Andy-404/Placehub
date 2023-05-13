@@ -32,7 +32,7 @@ const PlaceItem = props => {
     setShowConfirmModal(false);
     try {
       await sendRequest(
-        `https://place-hub.herokuapp.com/api/places/${props.id}`,
+        `https://placehub-backend.onrender.com/api/places/${props.id}`,
         'DELETE',
         null,
         {
@@ -40,7 +40,7 @@ const PlaceItem = props => {
         }
       );
       props.onDelete(props.id);
-    } catch (err) {}
+    } catch (err) { }
   };
 
   return (

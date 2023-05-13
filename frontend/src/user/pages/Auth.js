@@ -70,7 +70,7 @@ const Auth = () => {
     if (isLoginMode) {
       try {
         const responseData = await sendRequest(
-          `https://place-hub.herokuapp.com/api/users/login`,
+          `https://placehub-backend.onrender.com/api/users/login`,
           'POST',
           JSON.stringify({
             email: formState.inputs.email.value,
@@ -81,7 +81,7 @@ const Auth = () => {
           }
         );
         auth.login(responseData.userId, responseData.token);
-      } catch (err) {}
+      } catch (err) { }
     } else {
       try {
         const formData = new FormData();
@@ -90,13 +90,13 @@ const Auth = () => {
         formData.append('password', formState.inputs.password.value);
         formData.append('image', formState.inputs.image.value);
         const responseData = await sendRequest(
-          `https://place-hub.herokuapp.com/api/users/signup`,
+          `https://placehub-backend.onrender.com/api/users/signup`,
           'POST',
           formData
         );
 
         auth.login(responseData.userId, responseData.token);
-      } catch (err) {}
+      } catch (err) { }
     }
   };
 

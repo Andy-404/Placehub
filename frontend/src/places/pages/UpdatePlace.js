@@ -40,7 +40,7 @@ const UpdatePlace = () => {
     const fetchPlace = async () => {
       try {
         const responseData = await sendRequest(
-          `https://place-hub.herokuapp.com/api/places/${placeId}`
+          `https://placehub-backend.onrender.com/api/places/${placeId}`
         );
         setLoadedPlace(responseData.place);
         setFormData(
@@ -56,7 +56,7 @@ const UpdatePlace = () => {
           },
           true
         );
-      } catch (err) {}
+      } catch (err) { }
     };
     fetchPlace();
   }, [sendRequest, placeId, setFormData]);
@@ -65,7 +65,7 @@ const UpdatePlace = () => {
     event.preventDefault();
     try {
       await sendRequest(
-        `https://place-hub.herokuapp.com/api/places/${placeId}`,
+        `https://placehub-backend.onrender.com/api/places/${placeId}`,
         'PATCH',
         JSON.stringify({
           title: formState.inputs.title.value,
@@ -77,7 +77,7 @@ const UpdatePlace = () => {
         }
       );
       history.push('/' + auth.userId + '/places');
-    } catch (err) {}
+    } catch (err) { }
   };
 
   if (isLoading) {

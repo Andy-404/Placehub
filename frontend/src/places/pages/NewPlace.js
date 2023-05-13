@@ -51,7 +51,7 @@ const NewPlace = () => {
       formData.append('address', formState.inputs.address.value);
       formData.append('image', formState.inputs.image.value);
       await sendRequest(
-        'https://place-hub.herokuapp.com/api/places',
+        'https://placehub-backend.onrender.com/api/places',
         'POST',
         formData,
         {
@@ -59,7 +59,7 @@ const NewPlace = () => {
         }
       );
       history.push('/');
-    } catch (err) {}
+    } catch (err) { }
   };
 
   return (

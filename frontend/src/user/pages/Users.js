@@ -13,7 +13,7 @@ const Users = () => {
     const fetchUsers = async () => {
       try {
         const responseData = await sendRequest(
-          `https://place-hub.herokuapp.com/api/users`
+          `https://placehub-backend.onrender.com/api/users`
         );
         setLoadedUsers(responseData.users);
       } catch (err) {

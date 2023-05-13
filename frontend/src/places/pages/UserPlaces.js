@@ -16,10 +16,10 @@ const UserPlaces = () => {
     const fetchPlaces = async () => {
       try {
         const responseData = await sendRequest(
-          `https://place-hub.herokuapp.com/api/places/user/${userId}`
+          `https://placehub-backend.onrender.com/api/places/user/${userId}`
         );
         setLoadedPlaces(responseData.places);
-      } catch (err) {}
+      } catch (err) { }
     };
     fetchPlaces();
   }, [sendRequest, userId]);
